@@ -18,7 +18,6 @@
       position: absolute;
       height: 20px;
       width: 20px;
-      background: #f00;
     }
     #score {
       position: absolute;
@@ -116,7 +115,19 @@
         dotElement.style.left = `${dot.left}px`;
         dotElement.className = 'dot';
         dotElement.id = id;
+        if (id === 'apple') {
+            dotElement.style.backgroundColor = getRandomColor();
+        }
         gameBoard.appendChild(dotElement);
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
     }
 
     window.addEventListener('keydown', function (e) {
