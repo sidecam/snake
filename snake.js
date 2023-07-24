@@ -150,4 +150,21 @@
     startGame();
   </script>
 </body>
-</html>
+window.addEventListener('keydown', function (e) {
+    switch (e.key) {
+        case 'ArrowUp':
+            if (direction !== 'down') direction = 'up';
+            break;
+        case 'ArrowDown':
+            if (direction !== 'up') direction = 'down';
+            break;
+        case 'ArrowRight':
+            if (direction !== 'left') direction = 'right';
+            break;
+        case 'ArrowLeft':
+            if (direction !== 'right') direction = 'left';
+            break;
+    }
+});
+
+window.onload = startGame;
